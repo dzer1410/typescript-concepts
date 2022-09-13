@@ -1,10 +1,14 @@
-/// <reference path="result.ts" />
+import { Result } from './result';
+import * as _ from "lodash";
 
-class Scoreboard {
+export class Scoreboard {
     private results: Result[] = [];
 
     addResult(newResult: Result): void {
         this.results.push(newResult);
+        let allCapsName: string = _.upperCase(newResult.playerName);
+        console.log(`${allCapsName}: ${newResult.score}`);
+
     } 
 
     updateScoreboard(): void {
